@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TPD Compensation Lawyers — Expert Help for Claims</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0B1F3A;
+      --gold:    #C9973A;
+      --gold-lt: #F0C97A;
+      --white:   #FFFFFF;
+      --off:     #F7F5F1;
+      --mist:    #E8EEF5;
+      --slate:   #4A5568;
+      --body:    #2D3748;
+      --border:  #D5DDE8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--body);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 16px rgba(11,31,58,.35);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--gold);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .logo-icon svg { width: 20px; height: 20px; fill: var(--white); }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: .3px;
+    }
+
+    .logo-text span { color: var(--gold); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: rgba(255,255,255,.82);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .4px;
+      transition: color .2s;
+    }
+
+    nav a:hover { color: var(--gold-lt); }
+
+    .header-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      transition: background .2s, transform .15s !important;
+      white-space: nowrap;
+    }
+
+    .header-cta:hover { background: var(--gold-lt) !important; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #143060 60%, #1a3d6e 100%);
+      color: var(--white);
+      padding: 90px 32px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,151,58,.18);
+      border: 1px solid rgba(201,151,58,.45);
+      color: var(--gold-lt);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-bottom: 26px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 22px;
+      color: var(--white);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-lead {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.82);
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-link {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 38px;
+      border-radius: 8px;
+      letter-spacing: .3px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 18px rgba(201,151,58,.35);
+    }
+
+    .hero-link:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,151,58,.45);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 56px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: .8rem;
+      color: rgba(255,255,255,.65);
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 72px 32px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--slate);
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--off); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .about-grid p {
+      margin-bottom: 16px;
+      color: var(--slate);
+      font-size: .98rem;
+    }
+
+    .about-card {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 24px 26px;
+      box-shadow: 0 2px 12px rgba(11,31,58,.07);
+    }
+
+    .about-card p { margin: 0; font-size: .95rem; color: var(--slate); font-style: italic; }
+
+    /* ── BENEFITS ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .benefit-card {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 26px;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(11,31,58,.1);
+      border-color: var(--gold);
+    }
+
+    .benefit-icon {
+      width: 48px; height: 48px;
+      background: var(--navy);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .benefit-icon svg { width: 24px; height: 24px; fill: var(--gold); }
+
+    .benefit-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p { font-size: .9rem; color: var(--slate); }
+
+    /* ── CONDITIONS TABLE ── */
+    .table-section { background: var(--mist); }
+
+    .conditions-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(11,31,58,.09);
+    }
+
+    .conditions-table thead tr {
+      background: var(--navy);
+    }
+
+    .conditions-table th {
+      padding: 16px 22px;
+      text-align: left;
+      color: var(--gold-lt);
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .conditions-table td {
+      padding: 14px 22px;
+      font-size: .93rem;
+      color: var(--body);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .conditions-table tr:last-child td { border-bottom: none; }
+    .conditions-table tr:nth-child(even) td { background: var(--off); }
+
+    .badge-pill {
+      display: inline-block;
+      background: rgba(11,31,58,.08);
+      color: var(--navy);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 40px;
+    }
+
+    /* ── PROCESS ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      position: relative;
+      margin-top: 8px;
+    }
+
+    .step {
+      position: relative;
+      padding: 32px 28px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3rem;
+      color: var(--gold);
+      z-index: 2;
+      background: var(--white);
+      padding: 0 4px;
+    }
+
+    .step-num {
+      width: 42px; height: 42px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      margin: 0 auto 14px;
+    }
+
+    .step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .step p { font-size: .85rem; color: var(--slate); }
+
+    /* ── WHY US ── */
+    .why-us { background: var(--navy); color: var(--white); }
+    .why-us h2 { color: var(--white); }
+    .why-us .lead { color: rgba(255,255,255,.75); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 26px 22px;
+      transition: background .2s;
+    }
+
+    .why-card:hover { background: rgba(255,255,255,.12); }
+
+    .why-card h3 {
+      color: var(--gold-lt);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .why-card p { font-size: .88rem; color: rgba(255,255,255,.72); }
+
+    /* ── NO WIN NO FEE ── */
+    .nwnf {
+      background: linear-gradient(135deg, #f9f5ee 0%, #fff 100%);
+      border-top: 4px solid var(--gold);
+    }
+
+    .nwnf-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nwnf-inner p { font-size: 1rem; color: var(--slate); margin-bottom: 14px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .97rem;
+      padding: 14px 36px;
+      border-radius: 8px;
+      margin-top: 12px;
+      transition: background .2s, transform .15s;
+    }
+
+    .cta-btn:hover { background: #143060; transform: translateY(-2px); }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform .25s;
+    }
+
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+
+    .faq-a {
+      display: none;
+      font-size: .95rem;
+      color: var(--slate);
+      margin-top: 12px;
+    }
+
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F1E;
+      color: rgba(255,255,255,.7);
+      padding: 56px 32px 28px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: .88rem;
+      line-height: 1.75;
+      margin-top: 14px;
+      color: rgba(255,255,255,.55);
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      color: var(--gold-lt);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      font-size: .88rem;
+      margin-bottom: 10px;
+      transition: color .2s;
+    }
+
+    .footer-col a:hover { color: var(--gold-lt); }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .social-link {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: background .2s, border-color .2s;
+    }
+
+    .social-link:hover { background: var(--gold); border-color: var(--gold); }
+    .social-link svg { width: 16px; height: 16px; fill: rgba(255,255,255,.8); }
+    .social-link:hover svg { fill: var(--navy); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .8rem;
+      color: rgba(255,255,255,.38);
+    }
+
+    .footer-bottom a { color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gold-lt); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .step:not(:last-child)::after { display: none; }
+      nav { display: none; }
+      .process-steps { grid-template-columns: 1fr; }
+      .hero-stats { gap: 28px; }
+    }
+
+    @media (max-width: 520px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .section { padding: 52px 20px; }
+      .hero { padding: 64px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="header-inner">
+    <a href="https://tpdclaimslawyers.com.au/" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <span class="logo-text">TPD <span>Claims</span> Lawyers</span>
+    </a>
+    <nav>
+      <a href="#about">About TPD</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#conditions">Conditions</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://tpdclaimslawyers.com.au/" class="header-cta">Free Consultation</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Australia's TPD Insurance Specialists
+    </div>
+    <h1>
+      <em>Expert</em> TPD Compensation<br />Lawyers Who Fight For You
+    </h1>
+    <p class="hero-lead">
+      Suffering a serious injury or illness can completely change your life. Our experienced
+      <a href="https://tpdclaimslawyers.com.au/" style="color:var(--gold-lt);font-weight:600;text-decoration:none;" target="_blank" rel="noopener noreferrer">tpd compensation lawyers</a>
+      are here to guide you through every step — maximising your claim and reducing your stress.
+    </p>
+    <a href="https://tpdclaimslawyers.com.au/" target="_blank" rel="noopener noreferrer">
+      Start Your Free Claim Review →
+    </a>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">No Win</div><div class="stat-label">No Fee</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Dedicated Support</div></div>
+      <div class="stat"><div class="stat-num">Fast</div><div class="stat-label">Expert Assessment</div></div>
+      <div class="stat"><div class="stat-num">Max</div><div class="stat-label">Compensation</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="section about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-tag">What We Do</span>
+        <h2>TPD Compensation Lawyers — Expert Help for Claims</h2>
+        <p>Suffering a serious injury or illness can completely change a person's life. Many individuals find themselves unable to continue working, leading to financial stress and uncertainty about the future. In Australia, Total and Permanent Disability (TPD) insurance exists to provide financial support to people who can no longer work because of a permanent medical condition.</p>
+        <p>However, navigating the claims process is often complex, time-consuming, and emotionally overwhelming. This is where TPD compensation lawyers play an important role. These legal professionals assist individuals in understanding their rights, preparing strong claims, dealing with insurance companies, and maximising compensation outcomes.</p>
+        <p>Their expertise can significantly improve the chances of a successful claim while reducing stress for claimants during an already difficult period.</p>
+        <div class="about-card" style="margin-top:24px;">
+          <p>Many Australians are unaware that they may already have TPD insurance through their superannuation fund — and may be entitled to a lump-sum payment even if currently employed in a limited capacity.</p>
+        </div>
+      </div>
+      <div>
+        <span class="section-tag">Understanding Your Rights</span>
+        <h2 style="font-size:1.55rem;">What Is a Total & Permanent Disability Claim?</h2>
+        <p>A Total and Permanent Disability claim allows eligible individuals to receive a lump-sum payment when they are unable to return to work due to a permanent illness or injury.</p>
+        <p>TPD compensation lawyers are legal professionals who specialise in helping individuals claim Total and Permanent Disability benefits through superannuation funds or private insurance policies. Their primary role is to guide clients through the legal and administrative processes involved in lodging and managing TPD claims.</p>
+        <p>These lawyers understand insurance policy definitions, eligibility requirements, and the evidence needed to support a successful claim. Because insurance providers often use complex legal language and strict assessment criteria, professional legal representation can make a significant difference in the outcome.</p>
+        <p>Common medical conditions that may qualify for TPD benefits include severe physical injuries, chronic illnesses, psychological disorders, and degenerative diseases.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFITS ══ -->
+<section class="section" id="benefits" style="background:var(--white);">
+  <div class="section-inner">
+    <span class="section-tag">Why Choose Legal Help</span>
+    <h2>Benefits of Hiring TPD Compensation Lawyers</h2>
+    <p class="lead">Individuals seeking TPD benefits often choose legal assistance because the process is complex, evidence-intensive, and emotionally draining. Our lawyers manage every detail so you can focus on your health and recovery.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3>Expert Policy Interpretation</h3>
+        <p>We decode complex insurance language so you understand exactly what you're entitled to under your specific policy.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3>Evidence Collection</h3>
+        <p>We gather comprehensive medical records, specialist reports, and employment history to build the strongest possible case.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        </div>
+        <h3>Claim Preparation & Submission</h3>
+        <p>We prepare and submit all documentation to exacting standards, ensuring nothing is missed and deadlines are always met.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <h3>Insurer Negotiations</h3>
+        <p>We communicate directly with insurers on your behalf, negotiating firmly to secure the maximum compensation outcome.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+        </div>
+        <h3>Dispute Representation</h3>
+        <p>If a claim is denied, we manage appeals, internal reviews, and legal proceedings to fight for the outcome you deserve.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3>Reduced Stress & Peace of Mind</h3>
+        <p>Focus on your health and recovery. We handle the legal complexities, keeping you informed every step of the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONDITIONS TABLE ══ -->
+<section class="section table-section" id="conditions">
+  <div class="section-inner">
+    <span class="section-tag">Eligible Conditions</span>
+    <h2>Common Conditions Supported in TPD Claims</h2>
+    <p class="lead">Many physical and psychological conditions may qualify for TPD compensation. Eligibility depends on the policy definition and medical evidence rather than the diagnosis alone. Each claim is assessed individually.</p>
+    <table class="conditions-table">
+      <thead>
+        <tr>
+          <th>Medical Condition</th>
+          <th>Potential Impact on Work Capacity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Severe Back Injuries</strong></td>
+          <td><span class="badge-pill">Physical</span>&nbsp; Inability to perform physical duties</td>
+        </tr>
+        <tr>
+          <td><strong>Cancer</strong></td>
+          <td><span class="badge-pill">Medical</span>&nbsp; Ongoing treatment and reduced capacity</td>
+        </tr>
+        <tr>
+          <td><strong>Depression</strong></td>
+          <td><span class="badge-pill">Psychological</span>&nbsp; Difficulty maintaining employment</td>
+        </tr>
+        <tr>
+          <td><strong>Anxiety Disorders</strong></td>
+          <td><span class="badge-pill">Psychological</span>&nbsp; Reduced functional ability</td>
+        </tr>
+        <tr>
+          <td><strong>PTSD</strong></td>
+          <td><span class="badge-pill">Psychological</span>&nbsp; Psychological barriers to returning to work</td>
+        </tr>
+        <tr>
+          <td><strong>Heart Disease</strong></td>
+          <td><span class="badge-pill">Cardiac</span>&nbsp; Limited physical activity tolerance</td>
+        </tr>
+        <tr>
+          <td><strong>Multiple Sclerosis</strong></td>
+          <td><span class="badge-pill">Neurological</span>&nbsp; Progressive disability affecting employment</td>
+        </tr>
+        <tr>
+          <td><strong>Stroke</strong></td>
+          <td><span class="badge-pill">Neurological</span>&nbsp; Permanent physical or cognitive impairment</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="section" id="process" style="background:var(--off);">
+  <div class="section-inner">
+    <span class="section-tag">Step by Step</span>
+    <h2>The TPD Claims Process</h2>
+    <p class="lead">The process of pursuing a TPD claim generally follows clear stages. Our lawyers guide you through every one, handling the complexity so nothing falls through the cracks.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Determine Eligibility</h3>
+        <p>We review your superannuation accounts, policy documents, and employment history to confirm coverage.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Gather Medical Evidence</h3>
+        <p>We collect records from treating doctors, specialists, and healthcare providers to build your case.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Submit the Claim</h3>
+        <p>We prepare and lodge your complete claim to the insurer with all supporting documentation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Insurer Assessment</h3>
+        <p>The insurer reviews your application. We handle any requests for additional information or examinations.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h3>Outcome & Appeal</h3>
+        <p>If approved, compensation is paid. If denied, we advise on appeals, reviews, or further legal action.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US / CHALLENGES ══ -->
+<section class="section why-us">
+  <div class="section-inner">
+    <span class="section-tag" style="color:var(--gold);">Why Professional Help Matters</span>
+    <h2>Overcoming Common TPD Claim Challenges</h2>
+    <p class="lead">Insurance claims are rarely straightforward. Without legal guidance, common pitfalls can delay, reduce, or completely jeopardise your claim.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Insufficient Evidence</h3>
+        <p>Insurers may deny claims citing lack of medical proof. We know exactly what evidence is required and how to obtain it.</p>
+      </div>
+      <div class="why-card">
+        <h3>Policy Exclusions</h3>
+        <p>Certain conditions may appear excluded under policy language. We identify and challenge unjust exclusion clauses.</p>
+      </div>
+      <div class="why-card">
+        <h3>Work Capacity Disputes</h3>
+        <p>Some policies assess ability to return to any occupation; others only your own. We ensure the right definition is applied.</p>
+      </div>
+      <div class="why-card">
+        <h3>Missed Deadlines</h3>
+        <p>Complex administrative processes have strict timeframes. Our team ensures every deadline is met without exception.</p>
+      </div>
+      <div class="why-card">
+        <h3>Insurer Pressure</h3>
+        <p>Insurance companies have legal teams. We level the playing field, communicating on your behalf with equal expertise.</p>
+      </div>
+      <div class="why-card">
+        <h3>Superannuation Claims</h3>
+        <p>Many Australians don't realise they have TPD cover in their super. We identify and activate entitlements you didn't know existed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NO WIN NO FEE ══ -->
+<section class="section nwnf">
+  <div class="nwnf-inner">
+    <span class="section-tag" style="display:block;text-align:center;margin-bottom:10px;">Financial Accessibility</span>
+    <h2 style="text-align:center;">No Win, No Fee Representation</h2>
+    <p>Many TPD compensation lawyers operate under a No Win No Fee arrangement. This means clients generally do not pay legal fees unless the claim succeeds.</p>
+    <p>This fee structure allows injured or ill individuals to access professional legal representation without significant upfront financial pressure. It also aligns the lawyer's interests with achieving a successful result for the client.</p>
+    <p>However, claimants should always discuss costs, terms, and conditions before engaging legal services to ensure full transparency and peace of mind.</p>
+    <a href="https://tpdclaimslawyers.com.au/" class="cta-btn" target="_blank" rel="noopener noreferrer">Speak to a TPD Lawyer — It Costs Nothing to Ask →</a>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section" id="faq" style="background:var(--off);">
+  <div class="section-inner">
+    <span class="section-tag" style="display:block;text-align:center;">Frequently Asked Questions</span>
+    <h2 style="text-align:center;margin-bottom:40px;">Your Questions Answered</h2>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q">What does a TPD compensation lawyer do?</div>
+        <div class="faq-a">A TPD compensation lawyer assists individuals in preparing, lodging, and managing Total and Permanent Disability claims. They interpret policy language, gather evidence, negotiate with insurers, and represent clients through disputes or appeals.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I make a TPD claim through my superannuation?</div>
+        <div class="faq-a">Yes. Many superannuation funds include TPD insurance as part of their membership benefits. You may be entitled to a lump-sum payment without even knowing this cover existed — our lawyers can check on your behalf.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a lawyer for a TPD claim?</div>
+        <div class="faq-a">While not mandatory, legal representation can significantly improve claim quality and increase the likelihood of success. Insurance companies have experienced legal teams; having professional representation ensures you are not disadvantaged.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does a TPD claim take?</div>
+        <div class="faq-a">Claim timeframes vary depending on the insurer, complexity of the case, and availability of supporting evidence. Simple claims can be resolved in a few months; more complex or disputed claims may take longer. Our team works to move your claim forward as efficiently as possible.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if my TPD claim is denied?</div>
+        <div class="faq-a">A lawyer can review the insurer's decision, lodge an internal appeal, or pursue further legal options where appropriate — including proceedings before the Australian Financial Complaints Authority (AFCA) or the courts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="https://tpdclaimslawyers.com.au/" class="logo" style="margin-bottom:4px;">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;stroke:var(--white);">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="logo-text">TPD <span>Claims</span> Lawyers</span>
+        </a>
+        <p>Australia's dedicated TPD insurance specialists. We help injured and ill Australians claim the compensation they're entitled to — with no upfront cost and no jargon.</p>
+        <div class="social-links" style="margin-top:20px;">
+          <!-- Facebook -->
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <!-- Twitter / X -->
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#about">About TPD Claims</a>
+        <a href="#benefits">Benefits of Legal Help</a>
+        <a href="#conditions">Eligible Conditions</a>
+        <a href="#process">Claims Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://tpdclaimslawyers.com.au/" target="_blank" rel="noopener noreferrer">Visit Our Website</a>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <a href="https://tpdclaimslawyers.com.au/">TPD Claim Assessment</a>
+        <a href="https://tpdclaimslawyers.com.au/">Superannuation Claims</a>
+        <a href="https://tpdclaimslawyers.com.au/">Insurance Disputes</a>
+        <a href="https://tpdclaimslawyers.com.au/">No Win No Fee Cases</a>
+        <a href="https://tpdclaimslawyers.com.au/">Appeal Representation</a>
+        <a href="https://tpdclaimslawyers.com.au/">Free Consultation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 TPD Claims Lawyers. All rights reserved.</span>
+      <span>
+        <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="#">Disclaimer</a> &nbsp;·&nbsp;
+        <a href="https://tpdclaimslawyers.com.au/" target="_blank" rel="noopener noreferrer">tpdclaimslawyers.com.au</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
